@@ -24,7 +24,8 @@
 ;;; Theory Context
 ;;; ============================================================================
 
-(defstruct (theory-context (:conc-name tc-))
+(defstruct (theory-context (:conc-name tc-)
+                           (:constructor %make-theory-context))
   "Context for theory reasoning."
   (logic :qf-lia :type keyword)
   (constants nil :type list)        ; ((name . type) ...)
@@ -36,7 +37,7 @@
 
 (defun make-theory-context (&key (logic :qf-lia))
   "Create a new theory context."
-  (make-theory-context :logic logic))
+  (%make-theory-context :logic logic))
 
 ;;; ============================================================================
 ;;; Theory Interface

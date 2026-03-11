@@ -49,7 +49,7 @@
   "Get the index type of an array type."
   (first (type-parameters type)))
 
-(defun array-element-type (type)
+(defun smt-array-element-type (type)
   "Get the element type of an array type."
   (second (type-parameters type)))
 

@@ -42,16 +42,16 @@
 ;;; Variable generation
 ;;; ============================================================================
 
-(defvar *gensym-counter* 0
+(defvar *smt-gensym-counter* 0
   "Counter for generating unique variable names.")
 
 (defun make-fresh-var (&optional (prefix "v"))
   "Generate a fresh variable symbol."
-  (intern (format nil "~A~D" prefix (incf *gensym-counter*))))
+  (intern (format nil "~A~D" prefix (incf *smt-gensym-counter*))))
 
 (defun reset-gensym-counter ()
   "Reset the gensym counter."
-  (setf *gensym-counter* 0))
+  (setf *smt-gensym-counter* 0))
 
 ;;; ============================================================================
 ;;; Association list utilities
@@ -100,9 +100,9 @@
   "Compute intersection of two sets."
   (intersection s1 s2 :test test))
 
-(defun set-difference (s1 s2 &key (test #'equal))
+(defun smt-set-difference (s1 s2 &key (test #'equal))
   "Compute set difference S1 - S2."
-  (set-difference s1 s2 :test test))
+  (cl:set-difference s1 s2 :test test))
 
 (defun set-subset-p (s1 s2 &key (test #'equal))
   "Check if S1 is a subset of S2."

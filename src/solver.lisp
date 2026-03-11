@@ -8,7 +8,8 @@
 ;;; Solver Structure
 ;;; ============================================================================
 
-(defstruct (solver (:conc-name solver-))
+(defstruct (solver (:conc-name solver-)
+                    (:constructor %make-solver))
   "An SMT solver instance."
   (logic :qf-lia :type keyword)
   (constants nil :type list)          ; ((name . type) ...)
@@ -16,11 +17,11 @@
   (assertions nil :type list)         ; Asserted formulas
   (scope-stack nil :type list)        ; Stack of assertion lists for push/pop
   (model nil)                         ; Last computed model
-  (last-result nil :type keyword))    ; :sat, :unsat, or :unknown
+  (last-result nil :type (or keyword null)))  ; :sat, :unsat, :unknown, or nil
 
 (defun make-solver (&key (logic :qf-lia))
   "Create a new SMT solver instance."
-  (make-solver :logic logic))
+  (%make-solver :logic logic))
 
 (defmacro with-solver ((var &key (logic :qf-lia)) &body body)
   "Execute BODY with a solver bound to VAR."
