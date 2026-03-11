@@ -1,0 +1,37 @@
+# FASL files
+*.fasl
+*.fas
+*.lib
+*.o
+*.lx64fsl
+*.dx64fsl
+*.wx64fsl
+
+# ASDF cache
+~/.cache/common-lisp/
+
+# Editor backups
+*~
+\#*\#
+.\#*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# SLIME
+*.slime
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build artifacts
+build/
+dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/

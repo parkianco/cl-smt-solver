@@ -1,0 +1,15 @@
+cl-smt-solver
+=============
+
+Pure Common Lisp SMT Solver
+
+This software was originally developed as part of the CLPIC project.
+It has been extracted as a standalone library for general use.
+
+The implementation includes:
+- DPLL SAT solver with conflict-driven clause learning
+- Theory solvers for Boolean, Integer, and Bitvector domains
+- High-level verification API
+
+For the original project context, see:
+https://github.com/qwinr/clpic
