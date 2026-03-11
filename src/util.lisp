@@ -1,3 +1,6 @@
+;;;; Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+;;;; SPDX-License-Identifier: BSD-3-Clause
+
 ;;;; util.lisp - Utility functions for SMT solver
 ;;;;
 ;;;; Helper functions and data structures used throughout the solver.
