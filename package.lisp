@@ -124,6 +124,23 @@
    #:formula-vars
    #:formula-size
 
+   ;; Expression Types and Accessors
+   #:make-literal
+   #:expr-kind
+   #:expr-value
+
+   ;; DPLL Internal
+   #:make-lit
+   #:init-dpll-state
+   #:dpll-solve
+
+   ;; Theory Evaluation
+   #:eval-bool-formula
+   #:eval-int-formula
+   #:eval-int-comparison
+   #:eval-bv-formula
+   #:eval-bv-comparison
+
    ;; Result types
    #:sat
    #:unsat
