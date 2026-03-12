@@ -26,4 +26,6 @@
   :components ((:module "test"
                 :components ((:file "test-smt"))))
   :perform (test-op (o c)
-                    (symbol-call :cl-smt-solver.test :run-tests)))
+                    (let ((result (symbol-call :cl-smt-solver.test :run-tests)))
+                      (unless result
+                        (error "Tests failed")))))
