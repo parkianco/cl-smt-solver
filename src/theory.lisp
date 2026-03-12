@@ -382,7 +382,7 @@
          ;; Bitvector comparisons
          ((member op '(:bvult :bvule :bvugt :bvuge :bvslt :bvsle :bvsgt :bvsge))
           (eval-bv-comparison formula assignment bv-width))
-         (otherwise :unknown))))
+         (t :unknown))))
     (t :unknown)))
 
 ;;; ============================================================================
